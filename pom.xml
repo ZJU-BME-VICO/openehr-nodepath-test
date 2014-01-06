@@ -100,5 +100,10 @@
 			<artifactId>rm-skeleton</artifactId>
 			<version>${openEHR.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>edu.zju.bme</groupId>
+			<artifactId>snippet-java</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 </project>
