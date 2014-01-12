@@ -14,12 +14,11 @@
       http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
       http://cxf.apache.org/jaxws    
       http://cxf.apache.org/schemas/jaxws.xsd">
-    
-    <bean id="wsclient" class="edu.zju.bme.openehr.nodepath.service.NodePathPersistence" factory-bean="wsclientFactory" factory-method="create" />   
-           
-    <bean id="wsclientFactory" class="org.apache.cxf.jaxws.JaxWsProxyFactoryBean">   
-        <property name="serviceClass" value="edu.zju.bme.openehr.nodepath.service.NodePathPersistence" />   
-        <property name="address" value="http://wl-pc:9094/openehr-nodepath/NodePathPersistence" />       
-    </bean>
-        
+      
+    <jaxws:client 
+    	id="wsclient"
+		serviceClass="edu.zju.bme.openehr.nodepath.service.NodePathPersistence"
+		address="http://wl-pc:9094/openehr-nodepath/NodePathPersistence?wsdl">
+	</jaxws:client>
+	
 </beans>
