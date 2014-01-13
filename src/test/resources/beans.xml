@@ -18,7 +18,7 @@
     <jaxws:client 
     	id="wsclient"
 		serviceClass="edu.zju.bme.openehr.nodepath.service.NodePathPersistence"
-		address="http://wl-pc:9094/openehr-nodepath/NodePathPersistence?wsdl">
+		address="http://${tomcat.server}:${tomcat.port}/openehr-nodepath/NodePathPersistence?wsdl">
 	</jaxws:client>
 	
 </beans>

@@ -21,7 +21,7 @@ public class NodePathPersistenceImplTest {
 	public NodePathPersistenceImplTest() {
 		@SuppressWarnings("resource")
 		ApplicationContext context = new ClassPathXmlApplicationContext(
-				"applicationContext.xml", NodePathPersistenceImplTest.class);
+				"/beans.xml", NodePathPersistenceImplTest.class);
 		
 		nodePathPersistence = (NodePathPersistence) context.getBean("wsclient");
 	}
