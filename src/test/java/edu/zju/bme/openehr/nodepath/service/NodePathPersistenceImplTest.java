@@ -32,11 +32,12 @@ public class NodePathPersistenceImplTest {
 		nodePathPersistence.delete("delete from CoarseNodePathIndex");
 		
 		List<String> dadls = new ArrayList<String>();
-		dadls.add(FileOperator.INSTANCE.readLinesFromResource("patient1.dadl"));
-		dadls.add(FileOperator.INSTANCE.readLinesFromResource("patient2.dadl"));
+		dadls.add(FileOperator.INSTANCE.readLinesFromResource("patient1.dadl").orElse(""));
+		dadls.add(FileOperator.INSTANCE.readLinesFromResource("patient2.dadl").orElse(""));
 		
 		List<String> adls = new ArrayList<String>();
-		adls.add(FileOperator.INSTANCE.readLinesFromFile("../document/knowledge/ZJU/archetype/openEHR-DEMOGRAPHIC-PERSON.patient.v1.adl"));
+		adls.add(FileOperator.INSTANCE.readLinesFromFile(
+				"../document/knowledge/ZJU/archetype/openEHR-DEMOGRAPHIC-PERSON.patient.v1.adl").orElse(""));
 		
 		assertEquals(nodePathPersistence.insert(dadls, adls), 0);
 		assertEquals(nodePathPersistence.insert(dadls, adls), 0);
