@@ -4,10 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -36,8 +33,8 @@ public class NodePathPersistenceImplTest {
 		dadls.add(FileOperator.INSTANCE.readLinesFromResource("patient2.dadl").orElse(""));
 		
 		List<String> adls = new ArrayList<String>();
-		adls.add(FileOperator.INSTANCE.readLinesFromFile(
-				"../document/knowledge/ZJU/archetype/openEHR-DEMOGRAPHIC-PERSON.patient.v1.adl").orElse(""));
+		adls.add(FileOperator.INSTANCE.readLinesFromResource(
+				"openEHR-DEMOGRAPHIC-PERSON.patient.v1.adl").orElse(""));
 		
 		assertEquals(nodePathPersistence.insert(dadls, adls), 0);
 		assertEquals(nodePathPersistence.insert(dadls, adls), 0);
